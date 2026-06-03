@@ -1,0 +1,15 @@
+{
+  "control_sessions": 24109,
+  "treatment_sessions": 23462,
+  "control_conversion_rate": 0.0868,
+  "treatment_conversion_rate": 0.1003,
+  "absolute_uplift": 0.0135,
+  "relative_uplift": 0.1552,
+  "z_score": 5.0483,
+  "p_value": 4.5e-07,
+  "control_revenue_per_session": 22.53,
+  "treatment_revenue_per_session": 24.98,
+  "incremental_revenue_per_session": 2.45,
+  "treatment_coupon_spend": 75811.78,
+  "recommendation": "ship"
+}

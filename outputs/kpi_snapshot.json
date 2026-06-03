@@ -1,0 +1,12 @@
+{
+  "orders": 4446,
+  "active_customers": 2024,
+  "sessions": 47571,
+  "net_revenue": 1129187.81,
+  "gross_margin": 395077.8,
+  "gross_margin_rate": 0.3499,
+  "aov": 253.98,
+  "repeat_purchase_rate": 0.5128,
+  "return_rate": 0.0466,
+  "visit_to_purchase_rate": 0.0935
+}

@@ -1,0 +1,8 @@
+segment,customers,orders,net_revenue,gross_margin,coupon_spend,return_rate,margin_rate,coupon_to_revenue,recommended_action,expected_growth_lever
+Champions,366,1599,483304.02,182485.6,43995.09,0.0388,0.3776,0.091,Protect margin with early access and member-only bundles,revenue expansion
+Loyal High Value,292,1074,294666.71,106846.54,29751.18,0.0503,0.3626,0.101,Use threshold coupon only when basket size exceeds segment AOV,revenue expansion
+Core Customers,475,734,145424.67,44201.14,20536.52,0.0381,0.3039,0.1412,Maintain CRM cadence and test personalized category offers,coupon efficiency
+Cold Low Activity,414,414,77452.96,22777.61,10875.97,0.0725,0.2941,0.1404,Suppress heavy coupons; test low-cost content retargeting,coupon efficiency
+At Risk,224,372,69803.0,20621.06,10225.54,0.043,0.2954,0.1465,Run win-back coupon with expiration and remarketing audience,coupon efficiency
+New Potential,231,231,47574.65,14458.03,6474.39,0.0736,0.3039,0.1361,Send welcome journey with small coupon and category guide,coupon efficiency
+Big Ticket One-Off,22,22,10961.8,3687.82,1261.98,0.0,0.3364,0.1151,Cross-sell replenishment and service add-ons before discounting,revenue expansion

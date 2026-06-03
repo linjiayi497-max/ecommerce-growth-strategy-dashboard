@@ -1,0 +1,6 @@
+stage,sessions,conversion_from_visit,step_conversion,drop_off_sessions
+visit,47571,1.0,1.0,0
+product_view,37301,0.7841,0.7841,10270
+add_to_cart,16649,0.35,0.4463,20652
+checkout,9948,0.2091,0.5975,6701
+purchase,4446,0.0935,0.4469,5502
