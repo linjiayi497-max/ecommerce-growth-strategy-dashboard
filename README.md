@@ -1,59 +1,41 @@
-# E-commerce Growth Strategy Dashboard
+# 电商增长策略分析看板
 
-A reproducible e-commerce growth analytics project for data operations, business analysis, and growth strategy interviews. It converts order, event, and experiment data into KPI monitoring, RFM segmentation, cohort retention, funnel diagnosis, A/B test decisions, and coupon strategy recommendations.
+这是一个面向互联网运营、增长分析、商业分析和数据分析实习岗位的电商增长分析项目。项目使用 Python 生成可复现的模拟电商数据，并通过 Streamlit 看板展示 KPI、RFM 用户分层、月度留存、转化漏斗、A/B 实验和优惠券策略。
 
-The dataset is synthetic and generated locally. The implementation is original; no external project code is copied.
+数据为本地生成的模拟数据，代码为原创实现，未复制外部项目代码。
 
-## Why This Project
+## 项目亮点
 
-This project targets JD keywords often seen in internet operations, strategy, commercial analytics, and data analyst internships:
+- 构造订单、用户行为事件和 A/B 实验曝光数据。
+- 计算收入、订单数、AOV、复购率、毛利率、退货率等核心指标。
+- 基于 RFM 识别高价值用户、潜力用户、流失风险用户等客群。
+- 生成月度 cohort 留存矩阵，判断用户长期价值。
+- 计算访问、商品浏览、加购、结算、购买漏斗转化和流失。
+- 评估 A/B 实验转化率 uplift、p-value 和每 session 收入。
+- 输出分客群优惠券与 CRM 策略建议。
+- 提供 SQL 样例，便于面试讨论指标口径和数据分析逻辑。
 
-- KPI monitoring: revenue, orders, AOV, repeat rate, margin rate, return rate.
-- User analysis: RFM segmentation and segment-level growth actions.
-- Growth analytics: session funnel, cohort retention, and A/B test uplift.
-- CRM strategy: coupon efficiency and segment-specific recommendations.
-- SQL communication: interview-ready query examples for funnel, cohort, and experiment analysis.
-
-## Open-source Inspiration
-
-The design borrows product ideas from public GitHub projects, while the code and dataset are built from scratch:
-
-- [streamlit/example-app-cohort-analysis](https://github.com/streamlit/example-app-cohort-analysis): cohort analysis and Streamlit heatmap presentation.
-- [AmirhosseinHonardoust/Data-Storytelling-Dashboard](https://github.com/AmirhosseinHonardoust/Data-Storytelling-Dashboard): Streamlit/Plotly dashboard narrative style for e-commerce KPIs.
-- [growthbook/growthbook-python](https://github.com/growthbook/growthbook-python): experiment assignment and A/B testing workflow inspiration.
-
-## Project Structure
+## 项目结构
 
 ```text
 .
-|-- app.py
-|-- data/
-|   |-- demo_ab_test.csv
-|   |-- demo_events.csv
-|   `-- demo_orders.csv
-|-- outputs/
-|   |-- ab_test_result.json
-|   |-- cohort_retention.csv
-|   |-- coupon_strategy.csv
-|   |-- funnel_metrics.csv
-|   |-- insights_summary.md
-|   |-- kpi_snapshot.json
-|   |-- monthly_revenue.csv
-|   `-- rfm_segments.csv
+|-- app.py                         # Streamlit 看板
+|-- data/                          # 模拟订单、事件、实验数据
+|-- outputs/                       # 分析结果与洞察报告
 |-- scripts/
-|   |-- generate_demo_data.py
-|   `-- run_analysis.py
+|   |-- generate_demo_data.py      # 生成模拟数据
+|   `-- run_analysis.py            # 运行分析流水线
 |-- sql/
 |   `-- business_analysis_queries.sql
 |-- src/ecommerce_growth/
-|   |-- analytics.py
-|   |-- data.py
-|   `-- reporting.py
+|   |-- analytics.py               # KPI、RFM、留存、漏斗、A/B 分析
+|   |-- data.py                    # 数据生成与读取
+|   `-- reporting.py               # 报告输出
 `-- tests/
     `-- test_analytics.py
 ```
 
-## Quick Start
+## 快速开始
 
 ```bash
 python -m pip install -r requirements.txt
@@ -63,29 +45,37 @@ streamlit run app.py
 python -m unittest discover -s tests
 ```
 
-## Analysis Outputs
+## 已生成样例结果
 
-Running `python scripts/run_analysis.py` writes:
+- 订单数：4,446
+- 行为事件：115,915
+- 实验曝光：47,571
+- 净收入：1,129,187.81
+- 复购率：51.28%
+- 实验组相对转化提升：15.52%
+- A/B 实验 p-value：4.5e-07
 
-- `outputs/kpi_snapshot.json`: executive KPI snapshot.
-- `outputs/monthly_revenue.csv`: revenue, margin, coupon, and return-rate trend.
-- `outputs/rfm_segments.csv`: customer-level RFM scores and segment labels.
-- `outputs/cohort_retention.csv`: monthly retention matrix.
-- `outputs/funnel_metrics.csv`: stage-by-stage conversion and drop-off.
-- `outputs/ab_test_result.json`: conversion uplift, p-value, revenue per session, and decision.
-- `outputs/coupon_strategy.csv`: segment-level coupon actions and growth levers.
-- `outputs/insights_summary.md`: concise business findings for interview discussion.
+## 输出文件
 
-## Resume Evidence Draft
+- `outputs/kpi_snapshot.json`：核心 KPI。
+- `outputs/monthly_revenue.csv`：月度收入与毛利趋势。
+- `outputs/rfm_segments.csv`：用户 RFM 分层。
+- `outputs/cohort_retention.csv`：月度留存矩阵。
+- `outputs/funnel_metrics.csv`：漏斗转化。
+- `outputs/ab_test_result.json`：A/B 实验结果。
+- `outputs/coupon_strategy.csv`：优惠券策略建议。
+- `outputs/insights_summary.md`：业务洞察摘要。
 
-Use only after the repository is uploaded and reviewed:
+## 适配岗位
 
-> Built an e-commerce growth analytics system with Python and Streamlit, generating synthetic order/event/A-B test data and analyzing KPI trends, RFM segmentation, cohort retention, conversion funnels, experiment uplift, and coupon efficiency; produced SQL examples and action-oriented CRM recommendations for user operations and growth strategy scenarios.
+- 数据分析实习
+- 商业分析实习
+- 互联网运营实习
+- 策略数据运营实习
+- 增长分析实习
+- 用户运营 / CRM 运营实习
 
-## Interview Talking Points
+## 可写入简历的表述
 
-- How to define north-star and guardrail metrics for an e-commerce growth campaign.
-- How RFM segments translate into differentiated CRM and coupon actions.
-- How to diagnose funnel drop-off and decide whether the problem is traffic quality, page conversion, checkout friction, or pricing.
-- How to read A/B test uplift, p-value, revenue per session, and coupon spend together.
-- How to prevent growth tactics from sacrificing gross margin.
+搭建电商增长策略分析系统，使用 Python 和 Streamlit 生成并分析订单、用户行为与 A/B 实验数据，覆盖 KPI 监控、RFM 用户分层、月度留存、访问-购买漏斗、实验 uplift 与优惠券效率评估；基于 4,446 笔订单、115,915 条行为事件和 47,571 条实验曝光生成策略报告，识别高价值用户贡献与实验组转化提升，并输出分客群 CRM 策略建议。
+
