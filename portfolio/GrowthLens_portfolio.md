@@ -2,7 +2,6 @@
 
 从固定演示数据升级为可上传、可映射、可导出的自助式增长分析产品
 
-- 负责人：林家怡
 - 角色：产品设计 / 数据分析 / Streamlit 全栈实现 / 部署准备
 - 在线访问：https://ecommerce-growth-strategy-dashboardbranchmainmainfilepathapppy.streamlit.app/
 - GitHub：https://github.com/linjiayi497-max/ecommerce-growth-strategy-dashboard
