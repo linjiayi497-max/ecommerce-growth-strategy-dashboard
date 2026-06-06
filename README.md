@@ -1,8 +1,10 @@
-# 电商增长策略分析看板
+# GrowthLens 电商增长策略分析看板
 
-这是一个面向互联网运营、增长分析、商业分析和数据分析实习岗位的电商增长分析项目。项目使用 Python 生成可复现的模拟电商数据，并通过 Streamlit 看板展示 KPI、RFM 用户分层、月度留存、转化漏斗、A/B 实验和优惠券策略。
+GrowthLens 是一个面向互联网运营、增长分析、商业分析和数据分析实习岗位的电商增长分析产品。它既支持内置演示数据，也支持用户上传自己的 CSV/XLSX 数据，在浏览器中完成 KPI、RFM 用户分层、月度留存、转化漏斗、A/B 实验和优惠券策略分析。
 
-数据为本地生成的模拟数据，代码为原创实现，未复制外部项目代码。
+在线访问链接：待部署后更新。
+
+上传数据只用于当前会话分析，不写入服务器文件或仓库。演示数据为本地生成的模拟数据，代码为原创实现。
 
 ## 项目亮点
 
@@ -14,12 +16,15 @@
 - 评估 A/B 实验转化率 uplift、p-value 和每 session 收入。
 - 输出分客群优惠券与 CRM 策略建议。
 - 提供 SQL 样例，便于面试讨论指标口径和数据分析逻辑。
+- 支持上传订单表、用户行为表和可选 A/B 实验表。
+- 支持字段映射，兼容不同公司常见字段命名。
+- 支持导出 Excel 分析结果和 PDF 报告。
 
 ## 项目结构
 
 ```text
 .
-|-- app.py                         # Streamlit 看板
+|-- app.py                         # Streamlit 产品入口
 |-- data/                          # 模拟订单、事件、实验数据
 |-- outputs/                       # 分析结果与洞察报告
 |-- scripts/
@@ -30,7 +35,9 @@
 |-- src/ecommerce_growth/
 |   |-- analytics.py               # KPI、RFM、留存、漏斗、A/B 分析
 |   |-- data.py                    # 数据生成与读取
+|   |-- exports.py                 # Excel/PDF 导出
 |   `-- reporting.py               # 报告输出
+|   `-- upload.py                  # 上传数据读取、字段映射和标准化
 `-- tests/
     `-- test_analytics.py
 ```
@@ -44,6 +51,28 @@ python scripts/run_analysis.py
 streamlit run app.py
 python -m unittest discover -s tests
 ```
+
+## 上传数据格式
+
+订单表必填字段：
+
+- 用户ID
+- 下单时间
+- 订单金额
+
+用户行为表必填字段：
+
+- 用户ID
+- 事件类型
+- 事件时间
+
+A/B 实验表可选，若上传则必填：
+
+- 实验组别
+- 转化结果
+- 用户ID 或 会话ID 至少一个
+
+上传后系统会显示字段映射选择器，并自动识别 `user_id`、`amount`、`created_at`、`event_type` 等常见字段名。
 
 ## 已生成样例结果
 
@@ -65,3 +94,23 @@ python -m unittest discover -s tests
 - `outputs/ab_test_result.json`：A/B 实验结果。
 - `outputs/coupon_strategy.csv`：优惠券策略建议。
 - `outputs/insights_summary.md`：业务洞察摘要。
+## 部署到 Streamlit Community Cloud
+
+1. 将仓库推送到 GitHub。
+2. 在 Streamlit Community Cloud 选择本仓库。
+3. Branch 选择 `main`。
+4. Main file path 填写 `app.py`。
+5. 部署完成后，将在线 URL 填入本 README 的“在线访问链接”。
+
+## 适配岗位
+
+- 数据分析实习
+- 商业分析实习
+- 互联网运营实习
+- 策略数据运营实习
+- 增长分析实习
+- 用户运营 / CRM 运营实习
+
+## 可写入简历的表述
+
+搭建电商增长策略分析系统，使用 Python 和 Streamlit 生成并分析订单、用户行为与 A/B 实验数据，覆盖 KPI 监控、RFM 用户分层、月度留存、访问-购买漏斗、实验 uplift 与优惠券效率评估；基于 4,446 笔订单、115,915 条行为事件和 47,571 条实验曝光生成策略报告，识别高价值用户贡献与实验组转化提升，并输出分客群 CRM 策略建议。
