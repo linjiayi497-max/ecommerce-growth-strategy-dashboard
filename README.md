@@ -2,7 +2,11 @@
 
 GrowthLens 是一个面向互联网运营、增长分析、商业分析和数据分析实习岗位的电商增长分析产品。它既支持内置演示数据，也支持用户上传自己的 CSV/XLSX 数据，在浏览器中完成 KPI、RFM 用户分层、月度留存、转化漏斗、A/B 实验和优惠券策略分析。
 
-在线访问链接：待部署后更新。
+在线访问链接：https://ecommerce-growth-strategy-dashboardbranchmainmainfilepathapppy.streamlit.app/
+
+作品集 PDF：[GrowthLens_portfolio.pdf](portfolio/GrowthLens_portfolio.pdf)
+
+作品集 Markdown：[GrowthLens_portfolio.md](portfolio/GrowthLens_portfolio.md)
 
 上传数据只用于当前会话分析，不写入服务器文件或仓库。演示数据为本地生成的模拟数据，代码为原创实现。
 
